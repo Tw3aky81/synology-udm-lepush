@@ -1,5 +1,4 @@
 #!/bin/sh
-. unifi-host.conf
 
 ########################################################################################################################
 # VARIABLES
@@ -9,6 +8,7 @@ SYNO_CERT_DIR="/usr/syno/etc/certificate/_archive"
 UNIFI_CERT="unifi-core.crt"
 UNIFI_KEY="unifi-core.key"
 BASE_DIR=$(dirname "$0")
+. ${BASE_DIR}/unifi-host.conf
 
 ########################################################################################################################
 # PARAMETER HANDLING
