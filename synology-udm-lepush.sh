@@ -52,7 +52,7 @@ for current_domain_cert in ${SYNO_CERT_DIR}/*; do
 				cp ${current_domain_cert}/ECC-privkey.pem ${UNIFI_KEY}
 				cp ${current_domain_cert}/ECC-cert.pem ${UNIFI_CERT}
 				cp ${BASE_DIR}/unifi-cert-update.sh unifi-cert-update.sh
-
+				# initiate remote commands
 				scp unifi-* root@${UNIFI_HOSTNAME}:. >/dev/null 2>&1
 				ssh root@${UNIFI_HOSTNAME} ./unifi-cert-update.sh
 
