@@ -8,6 +8,7 @@ FORCE_RENEW=0
 SYNO_CERT_DIR="/usr/syno/etc/certificate/_archive"
 UNIFI_CERT="unifi-core.crt"
 UNIFI_KEY="unifi-core.key"
+BASE_DIR=$(dirname "$0")
 
 ########################################################################################################################
 # PARAMETER HANDLING
@@ -50,6 +51,7 @@ for current_domain_cert in ${SYNO_CERT_DIR}/*; do
 				# copy certs locally to keep track what's on UDM
 				cp ${current_domain_cert}/ECC-privkey.pem ${UNIFI_KEY}
 				cp ${current_domain_cert}/ECC-cert.pem ${UNIFI_CERT}
+				cp ${BASE_DIR}/unifi-cert-update.sh unifi-cert-update.sh
 
 				scp unifi-* root@${UNIFI_HOSTNAME}:. >/dev/null 2>&1
 				ssh root@${UNIFI_HOSTNAME} ./unifi-cert-update.sh
