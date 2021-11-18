@@ -50,7 +50,7 @@ for current_domain_cert in ${SYNO_CERT_DIR}/*; do
 				echo "unifi ssl certificate is outdated... updating from domain certificate"
 				# copy certs locally to keep track what's on UDM
 				cp ${current_domain_cert}/ECC-privkey.pem ${UNIFI_KEY}
-				cp ${current_domain_cert}/ECC-cert.pem ${UNIFI_CERT}
+				cp ${current_domain_cert}/ECC-fullchain.pem ${UNIFI_CERT}
 				cp ${BASE_DIR}/unifi-cert-update.sh unifi-cert-update.sh
 				# initiate remote commands
 				scp unifi-* root@${UNIFI_HOSTNAME}:. >/dev/null 2>&1
