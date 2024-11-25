@@ -11,5 +11,5 @@ Automate update of LetsEncrypt certs on UDM or UDM Pro from Synology DSM.
 
 > **_NOTE:_** Be aware that this task will reboot the unifi-os container on your UDM when certificates are deemed out of sync.
 
-# Contrib
+# Credit
 Based on jboxberger's gitlab [import-syno-cert](https://github.com/jboxberger/synology-gitlab-jboxberger/blob/master/src/scripts/import-syno-cert) script.
